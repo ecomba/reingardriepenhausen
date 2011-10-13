@@ -1,0 +1,6 @@
+rvm 1.9.2@reingardriepenhausen --create
+
+if ! command -v bundle ; then
+  gem install bundler
+  bundle | grep -v 'Using' | grep -v 'complete' | sed '/^$/d'
+fi
