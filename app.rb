@@ -4,50 +4,32 @@ require 'haml'
 require 'sass'
 Dir["lib/**/*.rb"].each {|f| require "./#{f}"}
 
-#
-# Configuration
-#
+class Reingard < Sinatra::Base
+  helpers Sinatra::Partials
 
-# Allow rendering of partials. See: https://gist.github.com/119874
-helpers Sinatra::Partials
-
-configure do
-  # Default Haml format is :xhtml
   set :haml, { :format => :html5 }
+  set :root, File.dirname(__FILE__)
+
+  configure :development do
+    require "sinatra/reloader"
+  end
+
+  configure :production do
+    set :haml, { :ugly => true }
+  end
+
+  helpers do
+    include Rack::Utils
+    alias_method :h, :escape_html
+  end
+
+  get '/' do
+    haml :index
+  end
+
+  get '/stylesheets/:name.css' do
+    content_type 'text/css', :charset => 'utf-8'
+    scss :"stylesheets/#{params[:name]}"
+  end
+
 end
-
-configure :development do
-  require "sinatra/reloader"
-end
-
-configure :production do
-  set :haml, { :ugly => true }
-end
-
-
-#
-# Helpers
-#
-helpers do
-  include Rack::Utils
-  alias_method :h, :escape_html
-end
-
-
-#
-# Routes
-#
-
-not_found do
-  redirect '/404.html'
-end
-
-get '/stylesheets/:name.css' do
-  content_type 'text/css', :charset => 'utf-8'
-  scss :"stylesheets/#{params[:name]}"
-end
-
-get "/" do
-  haml :index
-end
-

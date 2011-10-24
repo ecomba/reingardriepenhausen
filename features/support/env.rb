@@ -8,7 +8,7 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
 
-#Capybara.app = Reingard
+Capybara.app = Reingard
 
 class ReingardWorld
   include Capybara::DSL
