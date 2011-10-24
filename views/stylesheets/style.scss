@@ -212,6 +212,29 @@ a:hover { color: #036; }
 .clearfix { zoom: 1; }
 
 
+body {
+  background: black;
+}
+header {
+  h1 { 
+    font-family: 'Chivo', sans-serif;
+    margin-bottom: 0em;
+  }
+  span {
+    margin-left: 28em;
+  }
+}
+.welcome {
+  padding-top: 4em;
+
+  img {
+    max-width: 100%;
+  }
+
+  span {
+    font-size: 0.8em;
+  }
+}
 
 /**
  * Media queries for responsive design.
@@ -233,6 +256,11 @@ a:hover { color: #036; }
    consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
 @media screen and (max-device-width: 480px) {
 
+  header {
+    span {
+      margin-left: 0em;
+    }
+  }
 
   /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you: j.mp/textsizeadjust */
   /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
@@ -259,18 +287,3 @@ a:hover { color: #036; }
   h2, h3{ page-break-after: avoid; }
 }
 
-body {
-  background: black;
-}
-header {
-  h1 { 
-    font-family: 'Chivo', sans-serif;
-    margin-bottom: 0em;
-  }
-  span {
-    margin-left: 34em;
-  }
-}
-.welcome {
-  padding-top: 4em;
-}
