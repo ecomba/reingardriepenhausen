@@ -10,14 +10,6 @@ class Reingard < Sinatra::Base
   set :haml, { :format => :html5 }
   set :root, File.dirname(__FILE__)
 
-  configure :development do
-    require "sinatra/reloader"
-  end
-
-  configure :production do
-    set :haml, { :ugly => true }
-  end
-
   helpers do
     include Rack::Utils
     alias_method :h, :escape_html
