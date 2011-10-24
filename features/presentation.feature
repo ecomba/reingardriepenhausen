@@ -8,4 +8,4 @@ Feature: The site
 
   Scenario: Her name
     Then I should see "In memory of Reingard Riepenhausen" in the title
-    And I should see "In memory of Reingard Riepenhausen" in the header
+    And I should see "Reingard Riepenhausen" in the header
