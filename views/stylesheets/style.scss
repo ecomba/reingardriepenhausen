@@ -134,7 +134,7 @@ input:invalid, textarea:invalid {
 ::selection { background:#FF5E99; color:#fff; text-shadow: none; }
 
 /* j.mp/webkit-tap-highlight-color */
-a:link { -webkit-tap-highlight-color: #FF5E99; }
+a:link { -webkit-tap-highlight-color: #999; }
 
 /* Make buttons play nice in IE:
    www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
@@ -157,31 +157,9 @@ body, select, input, textarea {
 
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
-
-a, a:active, a:visited { color: #607890; }
-a:hover { color: #036; }
-
-
-/**
- * Primary styles
- *
- * Author: 
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+a { font-size: 0.8em;}
+a, a:active, a:visited { color: #999; }
+a:hover { color: #999; }
 
 /**
  * Non-semantic helper classes: please define your styles before this section.
@@ -242,7 +220,6 @@ header {
     }
   }
 }
-
 /**
  * Media queries for responsive design.
  *

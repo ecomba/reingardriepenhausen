@@ -80,9 +80,9 @@ pre { font-family: "Courier New", Courier, monospace; font-size: 13px; font-weig
 .teal { color: #155f62; }
 
 /* link colors */
-a { color: #058; text-decoration:none; }
-a:visited { color:#c14b0d; text-decoration:none; }
-a:hover { color:#eb6721; text-decoration:underline; }
+a { font-size: 0.8em; text-decoration:none; }
+a:visited { text-decoration:none; }
+a:hover { text-decoration:underline; }
 a:focus { outline:1px dotted #79160d; }
 
 /* .row hr, .row p, .row ul, .row ol, .row dl, .row pre, .row address, .row table, .row form {margin-bottom: 1.6em;} */
